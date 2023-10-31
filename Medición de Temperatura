@@ -1,0 +1,6 @@
+temperatura = analogRead(pinSensor); // Lee el valor analógico de 0 a 4095
+    float voltaje = temperatura * (4400 / 4095); // Convierte el valor del ADC a voltaje
+    float temp = voltaje/(10); // Convierte de voltaje a lectura de temperatura
+      Serial.print("Temperatura: ");
+      Serial.print(temp);
+      Serial.println(" °C");
