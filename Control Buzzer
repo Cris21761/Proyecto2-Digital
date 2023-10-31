@@ -1,0 +1,24 @@
+#define pinBuzzer PF_1
+
+void setup() {
+  pinMode(pinBuzzer, OUTPUT);  
+}
+
+void loop() {
+  med = digitalRead(tomarMed);
+  save = digitalRead(Guardar);
+
+  if (med == LOW && lastmed == HIGH) {
+    Serial2.print("T");
+    tone(pinBuzzer, 784, 250);
+    tone(pinBuzzer, 830, 250);
+    tone(pinBuzzer, 880, 250);
+  }
+
+  if (save == LOW && lastsave == HIGH) {
+    LCD_Clear(0x00);
+    tone(pinBuzzer, 261, 250); // Cambia la frecuencia según tu preferencia
+    tone(pinBuzzer, 294, 250);
+    tone(pinBuzzer, 329, 250);
+  }
+ }
